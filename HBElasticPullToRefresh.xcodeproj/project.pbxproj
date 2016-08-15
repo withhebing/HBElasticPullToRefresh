@@ -14,6 +14,7 @@
 		264622A11D62203E0083724E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264622A01D62203E0083724E /* Assets.xcassets */; };
 		264622A41D62203E0083724E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264622A21D62203E0083724E /* LaunchScreen.storyboard */; };
 		264622AF1D62203E0083724E /* HBElasticPullToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 264622AE1D62203E0083724E /* HBElasticPullToRefreshTests.m */; };
+		264622BC1D6223040083724E /* HBElasticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264622BB1D6223040083724E /* HBElasticView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		264622AA1D62203E0083724E /* HBElasticPullToRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HBElasticPullToRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		264622AE1D62203E0083724E /* HBElasticPullToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBElasticPullToRefreshTests.m; sourceTree = "<group>"; };
 		264622B01D62203E0083724E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		264622BA1D6223040083724E /* HBElasticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBElasticView.h; sourceTree = "<group>"; };
+		264622BB1D6223040083724E /* HBElasticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBElasticView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +84,11 @@
 		264622931D62203E0083724E /* HBElasticPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				264622B91D6222A30083724E /* HBElasticView */,
 				264622971D62203E0083724E /* AppDelegate.h */,
 				264622981D62203E0083724E /* AppDelegate.m */,
 				2646229A1D62203E0083724E /* ViewController.h */,
 				2646229B1D62203E0083724E /* ViewController.m */,
-				2646229D1D62203E0083724E /* Main.storyboard */,
-				264622A01D62203E0083724E /* Assets.xcassets */,
-				264622A21D62203E0083724E /* LaunchScreen.storyboard */,
-				264622A51D62203E0083724E /* Info.plist */,
 				264622941D62203E0083724E /* Supporting Files */,
 			);
 			path = HBElasticPullToRefresh;
@@ -97,6 +97,10 @@
 		264622941D62203E0083724E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2646229D1D62203E0083724E /* Main.storyboard */,
+				264622A01D62203E0083724E /* Assets.xcassets */,
+				264622A21D62203E0083724E /* LaunchScreen.storyboard */,
+				264622A51D62203E0083724E /* Info.plist */,
 				264622951D62203E0083724E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +113,15 @@
 				264622B01D62203E0083724E /* Info.plist */,
 			);
 			path = HBElasticPullToRefreshTests;
+			sourceTree = "<group>";
+		};
+		264622B91D6222A30083724E /* HBElasticView */ = {
+			isa = PBXGroup;
+			children = (
+				264622BA1D6223040083724E /* HBElasticView.h */,
+				264622BB1D6223040083724E /* HBElasticView.m */,
+			);
+			path = HBElasticView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264622BC1D6223040083724E /* HBElasticView.m in Sources */,
 				2646229C1D62203E0083724E /* ViewController.m in Sources */,
 				264622991D62203E0083724E /* AppDelegate.m in Sources */,
 				264622961D62203E0083724E /* main.m in Sources */,

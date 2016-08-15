@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HBElasticView.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    HBElasticView *elasticView = [[HBElasticView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    elasticView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:elasticView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

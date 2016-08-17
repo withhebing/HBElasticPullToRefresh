@@ -15,4 +15,7 @@
 
 @interface HBElasticView : UIView
 
+@property (nonatomic, strong) UIColor *shapeLayerFillColor;
+@property (nonatomic, strong) UIColor *shapeLayerStrokeColor;
+
 @end

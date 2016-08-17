@@ -17,6 +17,7 @@
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
 @property (nonatomic, strong) UIView *centerPoint;
+@property (nonatomic, assign) CGFloat minimalHeight;
 
 @end
 
@@ -65,6 +66,37 @@
         self.centerPoint.backgroundColor = [UIColor redColor];
     }
     return self;
+}
+
+- (void)setupShapeLayer {
+    _shapeLayer = [[CAShapeLayer alloc] init];
+    _shapeLayer.frame = CGRectMake(0, 0, kScreenW, minHeight);
+    _shapeLayer.fillColor = (__bridge CGColorRef _Nullable)([UIColor blueColor]);
+    [self.layer addSublayer:_shapeLayer];
+}
+
+- (void)setupCenterPoint {
+    _centerPoint = [[UIView alloc] initWithFrame:CGRectMake(kScreenW * 0.5, minHeight, 3.0, 3.0)];
+    _centerPoint.backgroundColor = [UIColor redColor];
+    [self addSubview:_centerPoint];
+}
+
+- (void)setupGuesture {
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self addGestureRecognizer:pan];
+}
+
+- (void)panAction:(UIPanGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint point = [recognizer translationInView:self];
+        CGFloat centerPtX = kScreenW * 0.5 + point.x;
+        self.minimalHeight = minHeight + point.y;
+        CGFloat centerPtY = self.minimalHeight > minHeight ? self.minimalHeight : minHeight;
+        self.centerPoint.frame = CGRectMake(centerPtX, centerPtY, 3.0, 3.0);
+
+    } else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled || recognizer.state == UIGestureRecognizerStateFailed) {
+        //
+    }
 }
 
 

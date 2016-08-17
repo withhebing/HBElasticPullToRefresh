@@ -17,5 +17,6 @@
 
 @property (nonatomic, strong) UIColor *shapeLayerFillColor;
 @property (nonatomic, strong) UIColor *shapeLayerStrokeColor;
+@property (nonatomic, strong) UIColor *controlPointColor;
 
 @end

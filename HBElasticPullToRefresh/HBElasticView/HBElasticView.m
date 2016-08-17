@@ -16,8 +16,11 @@
 
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
-@property (nonatomic, strong) UIView *centerPoint;
 @property (nonatomic, assign) CGFloat minimalHeight;
+
+// control point
+@property (nonatomic, strong) UIView *centerPoint;
+
 
 @end
 
@@ -99,6 +102,15 @@
     }
 }
 
+- (void)shapeLayerPath {
+    UIBezierPath *shapeLayerPath = [UIBezierPath bezierPath];
+    [shapeLayerPath moveToPoint:CGPointZero];
+    [shapeLayerPath addLineToPoint:CGPointMake(0, self.minimalHeight)];
+    [shapeLayerPath addQuadCurveToPoint:CGPointMake(kScreenW, self.minimalHeight) controlPoint:self.centerPoint.center];
+    [shapeLayerPath addLineToPoint:CGPointMake(kScreenW, 0)];
+    [shapeLayerPath closePath];
+    self.shapeLayer.path = shapeLayerPath.CGPath;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

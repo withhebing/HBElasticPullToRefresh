@@ -19,7 +19,7 @@
     [super viewDidLoad];
 
     HBElasticView *elasticView = [[HBElasticView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    elasticView.backgroundColor = [UIColor cyanColor];
+    elasticView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:elasticView];
 }
 
